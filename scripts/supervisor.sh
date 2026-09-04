@@ -18,7 +18,10 @@ LOCK="/tmp/dl-supervisor.lock"
 MAX_BUILDERS=1         # one builder at a time: memory safety beats wall clock
 MIN_FREE_GB=6          # available RAM floor; memory exhaustion is what kills a box
 MAX_LOAD=24            # 1-min load ceiling (16 cores; this machine idles near 13)
-MAX_SWAPIN_KBPS=512    # refuse while the box is actively thrashing
+MAX_SWAPIN_KBPS=2048   # refuse while the box is actively thrashing. 512 was too tight:
+                       # the first live cycle throttled at 796KB/s with 6GB free and load 9,
+                       # which is ordinary desktop paging, not thrashing. The RAM floor above
+                       # is the real crash guard; this is a secondary signal.
 
 exec 9>"$LOCK"
 flock -n 9 || exit 0
