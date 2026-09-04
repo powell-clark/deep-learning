@@ -1,0 +1,405 @@
+# Notebook contract: required section headings and runtime cap.
+# Read by scripts/verify_notebook.sh and by every builder seat.
+
+0a_intro_deep_learning_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Why Depth"
+    - "The Computational Graph"
+    - "A Two-Layer Network from Scratch"
+    - "Key Takeaways"
+
+0b_intro_deep_learning_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Tensors and Autograd"
+    - "The Training Loop"
+    - "Training on FashionMNIST"
+    - "Key Takeaways"
+
+10a_the_transformer_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Multi-Head Self-Attention"
+    - "Positional Encodings"
+    - "The Transformer Block"
+    - "Causal Masking"
+    - "Parameter Counting"
+    - "Key Takeaways"
+
+10b_the_transformer_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "A Decoder-Only Transformer"
+    - "Training"
+    - "Comparison with the LSTM"
+    - "Ablation"
+    - "Key Takeaways"
+
+11a_lm_pretraining_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The Autoregressive Objective"
+    - "Cross-Entropy and Perplexity"
+    - "Scaling Intuition"
+    - "Mini-GPT from Scratch"
+    - "Key Takeaways"
+
+11b_lm_pretraining_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Training a Small GPT"
+    - "Loss Curves and Samples"
+    - "Comparison with Pretrained GPT-2"
+    - "Sampling Parameters"
+    - "Key Takeaways"
+
+12a_finetuning_adaptation_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Adaptation Strategies"
+    - "LoRA Derived"
+    - "Parameter Efficiency"
+    - "Catastrophic Forgetting"
+    - "Key Takeaways"
+
+12b_finetuning_adaptation_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Fine-Tuning a Small Encoder"
+    - "LoRA with PEFT"
+    - "Comparison"
+    - "Key Takeaways"
+
+13a_alignment_rlhf_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Learning from Preferences"
+    - "The Bradley-Terry Model"
+    - "The RLHF Loop"
+    - "Direct Preference Optimisation"
+    - "Key Takeaways"
+
+13b_alignment_rlhf_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Training a Reward Model"
+    - "Running DPO"
+    - "Before and After"
+    - "Failure Modes"
+    - "Key Takeaways"
+
+14a_generative_models_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Autoencoders"
+    - "The Variational Autoencoder"
+    - "The Reparameterisation Trick"
+    - "Diffusion Models"
+    - "Comparing Generative Families"
+    - "Key Takeaways"
+
+14b_generative_models_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Training a VAE"
+    - "Sampling from the Prior"
+    - "A Minimal Diffusion Model"
+    - "Comparison"
+    - "Key Takeaways"
+
+15a_efficient_scalable_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Compute and Memory Accounting"
+    - "Mixed Precision"
+    - "Quantisation"
+    - "Distillation"
+    - "Parallelism Strategies"
+    - "Key Takeaways"
+
+15b_efficient_scalable_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Mixed Precision in Practice"
+    - "Quantising a Model"
+    - "Distillation Experiment"
+    - "Measurements"
+    - "Key Takeaways"
+
+1a_linear_to_neurons_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The Perceptron"
+    - "Logistic Regression as a Neuron"
+    - "Gradient Descent Variants"
+    - "Learning Rate Effects"
+    - "Key Takeaways"
+
+1b_linear_to_neurons_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The Model in PyTorch"
+    - "DataLoaders and Mini-Batching"
+    - "Overfit One Batch"
+    - "Key Takeaways"
+
+2a_mlp_backprop_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Forward Pass"
+    - "Deriving Backpropagation"
+    - "Implementation from Scratch"
+    - "Gradient Checking"
+    - "Activation Functions"
+    - "Key Takeaways"
+
+2b_mlp_backprop_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The PyTorch MLP"
+    - "Autograd vs Manual Gradients"
+    - "Inspecting Gradients with Hooks"
+    - "Key Takeaways"
+
+3a_training_dynamics_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Weight Initialisation"
+    - "Vanishing and Exploding Gradients"
+    - "Normalisation Layers"
+    - "Adaptive Optimisers"
+    - "Learning Rate Schedules"
+    - "Key Takeaways"
+
+3b_training_dynamics_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Ablation Setup"
+    - "Initialisation and Normalisation Results"
+    - "Optimiser Comparison"
+    - "Learning Rate Finder"
+    - "Key Takeaways"
+
+4a_regularisation_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Bias and Variance in Deep Networks"
+    - "Weight Decay and L2"
+    - "Dropout"
+    - "Early Stopping"
+    - "Data Augmentation"
+    - "Double Descent"
+    - "Key Takeaways"
+
+4b_regularisation_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Augmentation Pipelines"
+    - "Dropout and Weight Decay Ablation"
+    - "Early Stopping in Practice"
+    - "Learning Curves"
+    - "Key Takeaways"
+
+5a_convolutional_networks_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Convolution as a Linear Operator"
+    - "Padding, Stride and Output Size"
+    - "Receptive Fields"
+    - "Pooling"
+    - "Convolution from Scratch"
+    - "Key Takeaways"
+
+5b_convolutional_networks_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "A CNN in PyTorch"
+    - "Training on CIFAR-10"
+    - "Visualising Filters and Feature Maps"
+    - "Key Takeaways"
+
+6a_modern_architectures_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Residual Connections"
+    - "Normalisation Placement"
+    - "Efficient Convolutions"
+    - "Architecture Families"
+    - "Key Takeaways"
+
+6b_modern_architectures_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Loading a Pretrained Model"
+    - "Feature Extraction"
+    - "Full Fine-Tuning"
+    - "Comparison and Discussion"
+    - "Key Takeaways"
+
+7a_sequence_models_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The Recurrent Cell"
+    - "Backpropagation Through Time"
+    - "Vanishing Gradients over Time"
+    - "LSTM and GRU Gates"
+    - "A Character RNN from Scratch"
+    - "Key Takeaways"
+
+7b_sequence_models_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "An LSTM Language Model"
+    - "Training and Perplexity"
+    - "Sampling and Temperature"
+    - "Key Takeaways"
+
+8a_embeddings_tokenisation_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The Distributional Hypothesis"
+    - "Skip-Gram with Negative Sampling"
+    - "Training Embeddings from Scratch"
+    - "Embedding Geometry"
+    - "Key Takeaways"
+
+8b_embeddings_tokenisation_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Byte-Pair Encoding from Scratch"
+    - "Using a Library Tokeniser"
+    - "Tokenisation Trade-offs"
+    - "Visualising Embeddings"
+    - "Key Takeaways"
+
+9a_attention_theory.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "The Alignment Problem"
+    - "Additive Attention"
+    - "Scaled Dot-Product Attention"
+    - "Attention as Soft Lookup"
+    - "Implementation from Scratch"
+    - "Key Takeaways"
+
+9b_attention_practical.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "A Seq2Seq Task"
+    - "Adding Attention"
+    - "Attention Heatmaps"
+    - "Key Takeaways"
+
+X1_debugging_deep_networks.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Reading Loss Curves"
+    - "Overfit One Batch"
+    - "Gradient and Activation Diagnostics"
+    - "Finding NaNs"
+    - "Reproducibility and Seeds"
+    - "Key Takeaways"
+
+X2_evaluation_benchmarking.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Splits and Leakage"
+    - "Choosing Metrics"
+    - "Calibration"
+    - "Comparing Runs Properly"
+    - "Evaluating Language Models"
+    - "Key Takeaways"
+
+X3_deployment_safety.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Exporting a Model"
+    - "Latency and Throughput"
+    - "Monitoring and Drift"
+    - "Robustness"
+    - "Responsible Use"
+    - "Key Takeaways"
+
+X4_research_frontiers.ipynb:
+  max_runtime_seconds: 600
+  required_headings:
+    - "Introduction"
+    - "Setup"
+    - "Scaling Laws"
+    - "Beyond Dense Transformers"
+    - "Multimodal Models"
+    - "Interpretability"
+    - "Staying Current"
+    - "Key Takeaways"
+

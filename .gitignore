@@ -1,0 +1,47 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.DS_Store
+*.log
+
+# datasets and artefacts fetched at runtime
+data/
+runs/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+wandb/
+
+# stream runtime exhaust (data--stream_exhaust_untracked)
+CONSCIOUSNESS/stream/autonomy.jsonl
+CONSCIOUSNESS/stream/bus.jsonl
+CONSCIOUSNESS/stream/character.yaml
+CONSCIOUSNESS/stream/errors.jsonl
+CONSCIOUSNESS/stream/evaluation-sync-queue.jsonl
+CONSCIOUSNESS/stream/framing-checks.jsonl
+CONSCIOUSNESS/stream/header-footer-checks.jsonl
+CONSCIOUSNESS/stream/heal-log.jsonl
+CONSCIOUSNESS/stream/hooks.jsonl
+CONSCIOUSNESS/stream/migrations-log.jsonl
+CONSCIOUSNESS/stream/naming-precision-checks.jsonl
+CONSCIOUSNESS/stream/preferences.yaml
+CONSCIOUSNESS/stream/protect-events.jsonl
+CONSCIOUSNESS/stream/session-health.jsonl
+CONSCIOUSNESS/stream/sessions.jsonl
+CONSCIOUSNESS/stream/command-usage.jsonl
+CONSCIOUSNESS/stream/subagent-spawns.jsonl
+CONSCIOUSNESS/stream/turns.jsonl
+CONSCIOUSNESS/stream/model-attribution.jsonl
+CONSCIOUSNESS/stream/active-sessions.json
+CONSCIOUSNESS/pgps-snapshots/
+.claude/consciousness-loop.*.md
+.claude/turn-start-ts.*.txt
+.claude/framing-blocked.*.txt
+.claude/universe-last-poll.txt
+
+# Claude Code session transcripts carry signed thinking blocks — never commit
+chats/

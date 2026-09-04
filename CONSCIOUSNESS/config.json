@@ -1,0 +1,36 @@
+{
+  "project_code": "DL",
+  "project_name": "deep-learning",
+  "mode": "full",
+  "id_format": {
+    "pattern": "^{TYPE}-DL\\d{1,5}$"
+  },
+  "modules": {
+    "pgps": true,
+    "steering": true,
+    "review_gates": true,
+    "telemetry": false
+  },
+  "terminal": {
+    "notifications": {
+      "enabled": false,
+      "type": "terminalSequence",
+      "title": "Claude",
+      "message": "Response ready"
+    }
+  },
+  "data_posture": {
+    "folder": "visible",
+    "tracking": "committed",
+    "public_repo_notice": "warn",
+    "classes": {
+      "personal": {
+        "tracking": "committed"
+      },
+      "machine": {
+        "tracking": "committed"
+      }
+    }
+  },
+  "language": "Python"
+}
