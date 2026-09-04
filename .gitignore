@@ -45,3 +45,7 @@ CONSCIOUSNESS/pgps-snapshots/
 
 # Claude Code session transcripts carry signed thinking blocks — never commit
 chats/
+
+# supervisor working files
+.dl-supervisor.log
+.dl-complete
