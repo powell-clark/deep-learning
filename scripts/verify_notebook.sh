@@ -62,7 +62,9 @@ PYEOF
 OUT="$(mktemp -d)"
 trap 'rm -rf "$OUT"' EXIT
 START=$(date +%s)
-nice -n 10 timeout $((CAP + 300)) "$REPO/.venv/bin/jupyter" nbconvert \
+# invoke the module, not a console script: the venv is built with
+# --system-site-packages and carries no jupyter entry point of its own.
+nice -n 10 timeout $((CAP + 300)) "$PY" -m nbconvert \
   --to notebook --execute --ExecutePreprocessor.timeout="$CAP" \
   --output-dir="$OUT" --output executed.ipynb "$ABS" > "$OUT/log" 2>&1
 RC=$?
