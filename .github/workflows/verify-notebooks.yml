@@ -1,0 +1,51 @@
+name: verify-notebooks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  index-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No duplicate ids in union-merged indexes
+        run: |
+          set -euo pipefail
+          fail=0
+          for f in CONSCIOUSNESS/tasks/TASK-DONE-INDEX.md CONSCIOUSNESS/reviews/REVIEW-INDEX.md; do
+            [ -f "$f" ] || continue
+            dupes=$(tail -n +2 "$f" | grep -v '^\s*$' | cut -d'|' -f1 | sort | uniq -d || true)
+            if [ -n "$dupes" ]; then
+              echo "::error file=$f::duplicate ids after union merge: $dupes"
+              fail=1
+            fi
+          done
+          exit $fail
+
+  notebooks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 2 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --quiet --upgrade pip
+          .venv/bin/pip install --quiet -r requirements.txt
+      - name: Verify changed notebooks
+        run: |
+          set -uo pipefail
+          changed=$(git diff --name-only HEAD~1 HEAD -- 'notebooks/*.ipynb' || true)
+          if [ -z "$changed" ]; then echo "no notebooks changed"; exit 0; fi
+          rc=0
+          for nb in $changed; do
+            [ -f "$nb" ] || continue
+            bash scripts/verify_notebook.sh "$nb" || rc=1
+          done
+          exit $rc

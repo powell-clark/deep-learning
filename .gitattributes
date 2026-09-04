@@ -1,0 +1,11 @@
+# Append-only index files: two builder seats append rows concurrently, and taking
+# either side would silently drop the other's row. Union keeps both.
+# Permitted here because .github/workflows/verify-notebooks.yml fails CI on a
+# duplicate id in either file — the backstop the merge-conflict-resolution
+# precept requires before union may be applied to an id-bearing index.
+CONSCIOUSNESS/tasks/TASK-DONE-INDEX.md merge=union
+CONSCIOUSNESS/reviews/REVIEW-INDEX.md merge=union
+CONSCIOUSNESS/CHANGELOG.md merge=union
+
+# Notebooks are committed without outputs; treat as text for sane diffs.
+*.ipynb text
