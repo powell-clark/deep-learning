@@ -22,6 +22,21 @@ REPO="/home/powell-clark/projects/auxiliary/deep-learning"
 Use `$P` for PGPS CLIs. Use `$MK` for anything under `review/` — the cached build cannot
 load `js-yaml` (known defect), the marketplace build is byte-identical and can.
 
+## Before the first cycle: enter your own worktree
+
+Call `ListAgents` — its header line ("This session is X") names this seat. Call
+`EnterWorktree({name: X})` using **that exact name**, never a guessed generic name like
+`builder-dl3`. Two seats that both guess the same generic name cause the harness to
+resume the second into a worktree the first is still actively editing, and both sessions
+then commit, rebase and push against one working directory (TASK-DL038). Every seat's
+name is already unique (`supervisor.sh` mints `dl-builder-$(date +%H%M%S)`), so using it
+verbatim makes the collision structurally impossible.
+
+If `EnterWorktree` resumes you into a worktree that already has uncommitted changes, an
+open rebase/merge, or any state you do not recognise as your own prior work in this
+session — **stop and report**. Do not build on top of it; another seat may still be
+mid-edit there. This is a fault to surface, not a condition to push through.
+
 ## One cycle
 
 ### 1. Pick the next task

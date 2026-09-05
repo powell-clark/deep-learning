@@ -77,6 +77,33 @@ for br in $(git branch -r --format='%(refname:short)' 2>/dev/null | grep -E 'ori
   fi
 done
 
+# Builder worktrees accumulate under .claude/worktrees/ across many short-lived seats
+# (TASK-DL038: four builder-dl* worktrees observed locked on 2026-09-05, none ever
+# reclaimed). Remove one only once its branch is fully merged into main, it is not
+# locked, and it has no uncommitted changes -- any of those three can mean a seat is
+# still actively using it, so a worktree failing any check is left alone untouched.
+wt_path="" wt_branch="" wt_locked=0
+reap_worktree() {
+  [ -n "$wt_path" ] || return 0
+  case "$wt_path" in "$REPO"/.claude/worktrees/*) ;; *) return 0 ;; esac
+  [ "$wt_locked" -eq 0 ] || return 0
+  [ -n "$wt_branch" ] || return 0
+  timeout 10 git merge-base --is-ancestor "$wt_branch" main 2>/dev/null || return 0
+  [ -z "$(timeout 10 git -C "$wt_path" status --porcelain 2>/dev/null)" ] || return 0
+  if timeout 30 git worktree remove "$wt_path" 2>/dev/null; then
+    note worktree-reaped "removed merged worktree $wt_path ($wt_branch)"
+    git branch -d "$wt_branch" 2>/dev/null || true
+  fi
+}
+while IFS= read -r line; do
+  case "$line" in
+    "worktree "*) reap_worktree; wt_path="${line#worktree }"; wt_branch=""; wt_locked=0 ;;
+    "branch "*) wt_branch="${line#branch refs/heads/}" ;;
+    locked*) wt_locked=1 ;;
+  esac
+done < <(timeout 10 git worktree list --porcelain 2>/dev/null)
+reap_worktree
+
 backlog=$(( $(wc -l < CONSCIOUSNESS/tasks/TASK-BACKLOG-INDEX.md) - 1 ))
 active=$(( $(wc -l < CONSCIOUSNESS/tasks/TASK-ACTIVE-INDEX.md) - 1 ))
 [ "$backlog" -lt 0 ] && backlog=0
