@@ -17,5 +17,5 @@ FEAT-DL15|in_review|p1|performance|Language Model Pretraining (Lesson 11)|STORY-
 FEAT-DL16|in_review|p1|performance|Fine-tuning and Adaptation (Lesson 12)|STORY-DL13|TASK-DL25,TASK-DL26,TASK-DL045|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL16.md||2026-09-05||
 FEAT-DL17|in_review|p1|performance|Alignment: RLHF and Preference Optimisation (Lesson 13)|STORY-DL14|TASK-DL27,TASK-DL28|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL17.md||2026-09-05||
 FEAT-DL18|in_progress|p1|performance|Generative Models (Lesson 14)|STORY-DL15|TASK-DL29,TASK-DL30,TASK-DL046|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL18.md||2026-09-05||
-FEAT-DL19|in_progress|p1|performance|Efficient and Scalable Deep Learning (Lesson 15)|STORY-DL16|TASK-DL31,TASK-DL32|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL19.md||2026-09-05||
+FEAT-DL19|in_review|p1|performance|Efficient and Scalable Deep Learning (Lesson 15)|STORY-DL16|TASK-DL31,TASK-DL32|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL19.md||2026-09-05||
 FEAT-DL20|in_review|p1|performance|Professional Practice Series (X-series)|STORY-DL17|TASK-DL33,TASK-DL34,TASK-DL35,TASK-DL36|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL20.md||2026-09-05||
