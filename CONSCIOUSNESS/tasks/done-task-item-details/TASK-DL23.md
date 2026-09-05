@@ -30,10 +30,23 @@ scripts/verify_notebook.sh notebooks/11a_lm_pretraining_theory.ipynb
 
 ## Closing Note
 `scripts/verify_notebook.sh notebooks/11a_lm_pretraining_theory.ipynb` — PASS, clean execution
-in 11s (cap 600s). Derives the chain-rule factorisation and cross-entropy loss (verified exactly
-against a hand-reconstructed joint distribution, max diff 6.94e-18), defines perplexity from the
-loss (uniform baseline over the corpus's 65-character vocabulary gives perplexity 65.00 exactly),
-empirically demonstrates power-law-shaped loss scaling across four model widths trained in 2s
-total, and implements the full mini-GPT forward pass and cross-entropy loss from scratch in
-NumPy, matched against an equivalent batched PyTorch computation to floating-point precision
-(max logit diff 8.33e-17, loss diff 0.00e+00).
+in 18s (cap 600s). Derives the autoregressive objective from the chain rule and confirms its
+negative log-likelihood is numerically identical to one-hot cross-entropy; defines perplexity
+and confirms a uniform baseline gives exactly PPL=65 on this corpus's vocabulary
+(loss=ln(65)=4.174387 nats); demonstrates loss falling with parameters (training loss, fixed
+data: 2.4002 to 1.1701 nats across five widths, 1,625 to 147,905 params) and with data (held-out
+loss, fixed width: 7.2633 to 3.0720 nats across five data sizes, 500 to 8,000 chars); implements
+the full decoder-only mini-GPT forward pass and cross-entropy loss from scratch in NumPy on a
+real Tiny Shakespeare batch, matched against an equivalent PyTorch computation to floating-point
+precision (max logit diff 1.67e-16, loss diff 0.00e+00).
+
+Note on provenance: this notebook's body was produced by a different concurrent process/session
+during this task's close-out (the working file was replaced mid-flow while this claim was still
+active — see the builder session's final report for the full account). Before closing, the
+data-scaling sweep was found to report *training* loss while varying the training-set size
+itself, which rewards memorising a smaller set rather than generalising and made loss rise with
+more data (500 chars: 0.037 nats vs. 8,000 chars: 2.01 nats) — the opposite of the intended
+lesson and contradicted by its own printed output. Fixed by reporting loss on a fixed held-out
+slice for the data sweep (training loss remains correct and unconfounded for the width sweep,
+where data and steps are held fixed across runs); both curves are now genuinely, verifiably
+monotonic. Markdown and axis labels were updated to match.
