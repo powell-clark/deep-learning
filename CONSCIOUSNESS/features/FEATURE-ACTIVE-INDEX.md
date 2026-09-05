@@ -5,7 +5,7 @@ FEAT-DL3|in_progress|p1|performance|Verified reproducibility under the determini
 FEAT-DL4|in_review|p1|performance|Introduction to Deep Learning (Lesson 0)|STORY-DL1|TASK-DL1,TASK-DL2|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL4.md||2026-09-05||
 FEAT-DL5|in_review|p1|performance|From Linear Models to Neurons (Lesson 1)|STORY-DL2|TASK-DL3,TASK-DL4|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL5.md||2026-09-05||
 FEAT-DL6|in_review|p1|performance|Multilayer Perceptrons and Backpropagation (Lesson 2)|STORY-DL3|TASK-DL5,TASK-DL6|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL6.md||2026-09-05||
-FEAT-DL7|in_progress|p1|performance|Training Dynamics (Lesson 3)|STORY-DL4|TASK-DL7,TASK-DL8|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL7.md||2026-09-05||
+FEAT-DL7|in_review|p1|performance|Training Dynamics (Lesson 3)|STORY-DL4|TASK-DL7,TASK-DL8|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL7.md||2026-09-05||
 FEAT-DL8|in_progress|p1|performance|Regularisation and Generalisation (Lesson 4)|STORY-DL5|TASK-DL9,TASK-DL10|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL8.md||2026-09-05||
 FEAT-DL9|in_progress|p1|performance|Convolutional Networks (Lesson 5)|STORY-DL6|TASK-DL11,TASK-DL12|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL9.md||2026-09-05||
 FEAT-DL10|in_progress|p1|performance|Modern Architectures and Transfer Learning (Lesson 6)|STORY-DL7|TASK-DL13,TASK-DL14|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL10.md||2026-09-05||
