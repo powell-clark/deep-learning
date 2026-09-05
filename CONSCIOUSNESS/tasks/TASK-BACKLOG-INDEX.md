@@ -1,5 +1,4 @@
 id|priority|title|story_ids|directive_id|feature_ids|doc|blocked_by|blocks|assignee|parent_task_id|sequence|expected_duration|story_points
-TASK-DL5|p2|Lesson 2a Multilayer Perceptrons and Backpropagation theory|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL5.md|||||5|1d|3
 TASK-DL6|p2|Lesson 2b Multilayer Perceptrons and Backpropagation practical|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL6.md|TASK-DL5||||6|1d|3
 TASK-DL7|p2|Lesson 3a Training Dynamics theory|STORY-DL4|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL7|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL7.md|||||7|1d|3
 TASK-DL8|p2|Lesson 3b Training Dynamics practical|STORY-DL4|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL7|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL8.md|TASK-DL7||||8|1d|3
