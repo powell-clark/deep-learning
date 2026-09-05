@@ -24,3 +24,4 @@ TASK-DL22|Lesson 10b The Transformer practical|STORY-DL11|DIRECT-DL1|FEAT-DL1,FE
 TASK-DL27|Lesson 13a Alignment: RLHF and Preference Optimisation theory|STORY-DL14|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL17|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL27.md|1d|3
 TASK-DL29|Lesson 14a Generative Models theory|STORY-DL15|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL18|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL29.md|1d|3
 TASK-DL23|Lesson 11a Language Model Pretraining theory|STORY-DL12|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL15|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL23.md|1d|3
+TASK-DL30|Lesson 14b Generative Models practical|STORY-DL15|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL18|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL30.md|1d|3
