@@ -28,3 +28,4 @@ TASK-DL30|Lesson 14b Generative Models practical|STORY-DL15|DIRECT-DL1|FEAT-DL1,
 TASK-DL25|Lesson 12a Fine-tuning and Adaptation theory|STORY-DL13|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL16|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL25.md|1d|3
 TASK-DL33|X1 Debugging Deep Networks notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3,FEAT-DL20|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL33.md|1d|3
 TASK-DL24|Lesson 11b Language Model Pretraining practical|STORY-DL12|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL15|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL24.md|1d|3
+TASK-DL28|Lesson 13b Alignment: RLHF and Preference Optimisation practical|STORY-DL14|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL17|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL28.md|1d|3
