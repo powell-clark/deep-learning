@@ -43,6 +43,24 @@ note tick "supervisor entered"
 
 timeout 60 git pull --rebase --autostash -q 2>/dev/null || note pull-skipped "pull failed or timed out; continuing on local state"
 
+# Builder seats work in a linked worktree on their own branch (the AGENTS.md rule:
+# feature work never happens on a branch in a shared checkout). Their commits therefore
+# land on origin/worktree-* and NOT on main, so main's indexes read "nothing done" while
+# notebooks pile up on a branch, and the corpus never assembles where the operator looks.
+# Fast-forward only: if the histories have diverged this does nothing and says so, rather
+# than attempting a merge no one asked for.
+timeout 60 git fetch origin -q 2>/dev/null || true
+for br in $(git branch -r --format='%(refname:short)' 2>/dev/null | grep -E 'origin/worktree-' || true); do
+  if git merge-base --is-ancestor HEAD "$br" 2>/dev/null; then
+    before=$(git rev-parse --short HEAD)
+    if timeout 60 git merge --ff-only "$br" -q 2>/dev/null; then
+      after=$(git rev-parse --short HEAD)
+      [ "$before" != "$after" ] && note fast-forwarded "main $before -> $after from $br"
+      timeout 60 git push origin main -q 2>/dev/null || note push-skipped "could not push main"
+    fi
+  fi
+done
+
 backlog=$(( $(wc -l < CONSCIOUSNESS/tasks/TASK-BACKLOG-INDEX.md) - 1 ))
 active=$(( $(wc -l < CONSCIOUSNESS/tasks/TASK-ACTIVE-INDEX.md) - 1 ))
 [ "$backlog" -lt 0 ] && backlog=0
