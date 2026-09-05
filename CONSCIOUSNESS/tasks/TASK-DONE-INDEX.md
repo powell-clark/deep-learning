@@ -12,3 +12,4 @@ TASK-DL10|Lesson 4b Regularisation and Generalisation practical|STORY-DL5|DIRECT
 TASK-DL11|Lesson 5a Convolutional Networks theory|STORY-DL6|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL9|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL11.md|1d|3
 TASK-DL12|Lesson 5b Convolutional Networks practical|STORY-DL6|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL9|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL12.md|1d|3
 TASK-DL13|Lesson 6a Modern Architectures and Transfer Learning theory|STORY-DL7|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL10|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL13.md|1d|3
+TASK-DL14|Lesson 6b Modern Architectures and Transfer Learning practical|STORY-DL7|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL10|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL14.md|1d|3

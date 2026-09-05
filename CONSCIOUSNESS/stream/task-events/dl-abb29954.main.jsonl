@@ -1,0 +1,2 @@
+{"schema_version":1,"event":"status-change","task_id":"TASK-DL14","from":"backlog","to":"in_review","note":"verifier PASS","timestamp":"2026-09-05 08:33:50.565 bst","session_id":"dl-abb29954","canonical_id":"abb29954-60bb-4bf5-87c8-467462c59a22","branch":"main"}
+{"schema_version":1,"event":"status-change","task_id":"TASK-DL14","from":"in_review","to":"done","timestamp":"2026-09-05 08:33:50.740 bst","session_id":"dl-abb29954","canonical_id":"abb29954-60bb-4bf5-87c8-467462c59a22","branch":"main"}
