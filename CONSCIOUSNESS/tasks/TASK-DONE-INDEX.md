@@ -41,3 +41,4 @@ TASK-DL039|Move claimed task detail cards to active dir||DIRECT-DL1||CONSCIOUSNE
 TASK-DL040|Add pip install cell to 8b tokenisation notebook|STORY-DL9|DIRECT-DL1|FEAT-DL1|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL040.md||
 TASK-DL041|Add pip install cell to 11b pretraining notebook|STORY-DL12|DIRECT-DL1|FEAT-DL1|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL041.md||
 TASK-DL042|Reap finished builder seats||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL042.md||
+TASK-DL043|BUILDER.md worktree naming collision||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL043.md||
