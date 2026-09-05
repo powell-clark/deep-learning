@@ -1,5 +1,4 @@
 id|priority|title|story_ids|directive_id|feature_ids|doc|blocked_by|blocks|assignee|parent_task_id|sequence|expected_duration|story_points
-TASK-DL3|p2|Lesson 1a From Linear Models to Neurons theory|STORY-DL2|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL5|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL3.md|||||3|1d|3
 TASK-DL4|p2|Lesson 1b From Linear Models to Neurons practical|STORY-DL2|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL5|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL4.md|TASK-DL3||||4|1d|3
 TASK-DL5|p2|Lesson 2a Multilayer Perceptrons and Backpropagation theory|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL5.md|||||5|1d|3
 TASK-DL6|p2|Lesson 2b Multilayer Perceptrons and Backpropagation practical|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL6.md|TASK-DL5||||6|1d|3
