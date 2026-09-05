@@ -44,3 +44,4 @@ TASK-DL042|Reap finished builder seats||DIRECT-DL1||CONSCIOUSNESS/tasks/done-tas
 TASK-DL043|BUILDER.md worktree naming collision||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL043.md||
 TASK-DL044|Fix mismatched fine-tuning budget in 6b|STORY-DL7|DIRECT-DL1|FEAT-DL10|TASK-DL044.md||
 TASK-DL046|Fix diffusion noise schedule not reaching near-zero alpha_bar in Lesson 14|STORY-DL15|DIRECT-DL1|FEAT-DL18|TASK-DL046.md||
+TASK-DL047|Fix 14b diffusion model not converging to digits|STORY-DL15|DIRECT-DL1|FEAT-DL18|TASK-DL047.md||
