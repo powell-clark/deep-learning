@@ -32,5 +32,8 @@
       }
     }
   },
-  "language": "Python"
+  "language": "Python",
+  "review_gates": {
+    "min_agent_reviews": 1
+  }
 }

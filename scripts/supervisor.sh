@@ -162,7 +162,33 @@ start_seat() {
 # Reviewer first: it unblocks features and is short-lived. Two triggers, not one --
 # an explicit in_review row waiting for a verdict, OR the build having run out of tasks
 # with features still open, which is the closeout pass.
+#
+# The closeout trigger is BOUNDED, and that bound is load-bearing rather than tidy.
+# Features are kano=performance, so their gate is the agent tier, and the approve CLI
+# only relocates a feature to the DONE index once the recorded verdicts reach
+# min_agent_reviews. If that threshold is ever higher than what one reviewer pass
+# records, features_open never falls, and an unbounded trigger would start a fresh
+# Sonnet seat every 15 minutes forever -- burning subscription quota and loading the
+# operator's workstation with nobody watching. Three attempts that do not move the
+# number is a stall to report, not a condition to retry into.
+CLOSEOUT_TRIES="$REPO/.dl-closeout-tries"
 if [ "$live_reviewer" -eq 0 ] && { [ "$awaiting" -gt 0 ] || { [ "$remaining" -eq 0 ] && [ "$features_open" -gt 0 ]; }; }; then
+  if [ "$awaiting" -eq 0 ]; then
+    prev_open=$(cut -d' ' -f1 "$CLOSEOUT_TRIES" 2>/dev/null || echo "")
+    tries=$(cut -d' ' -f2 "$CLOSEOUT_TRIES" 2>/dev/null || echo 0)
+    [ -z "${tries:-}" ] && tries=0
+    if [ "$prev_open" = "$features_open" ]; then
+      tries=$(( tries + 1 ))
+    else
+      tries=1
+    fi
+    printf '%s %s\n' "$features_open" "$tries" > "$CLOSEOUT_TRIES"
+    if [ "$tries" -gt 3 ]; then
+      note closeout-stalled "features_open stuck at ${features_open} across ${tries} reviewer passes — verdicts are recording but not promoting; stopping rather than looping"
+      touch "$SENTINEL"
+      exit 0
+    fi
+  fi
   start_seat "dl-reviewer-$(date +%H%M%S)" \
     "Read REVIEWER.md in this repository and follow it exactly. You are the reviewer; do not write notebooks."
   exit 0
