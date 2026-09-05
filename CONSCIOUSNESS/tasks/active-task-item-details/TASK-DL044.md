@@ -6,7 +6,9 @@ Rejected at review (AC-6). 6b_modern_architectures_practical.ipynb trains featur
 
 ## Acceptance criteria
 
-- [ ] _(to be filled in)_
+- [ ] Feature extraction (cell 12) and both fine-tuning runs (cell 15) train for the same number of epochs
+- [ ] `scripts/verify_notebook.sh notebooks/6b_modern_architectures_practical.ipynb` prints `PASS`
+- [ ] The comparison narrative in cells 16 and 19 matches the accuracies actually produced at the corrected epoch count
 
 ## Dependencies
 
@@ -18,8 +20,9 @@ Rejected at review (AC-6). 6b_modern_architectures_practical.ipynb trains featur
 
 ### Failure modes
 
-- _(to be filled in)_
+- Raising fine-tuning from 8 to 12 epochs (rather than lowering feature extraction to 8) roughly doubles fine-tuning compute and risks breaching the 10-minute CPU cap
+- Narrative in cell 19 asserts "a well-tuned fine-tune can beat feature extraction" and "an ill-tuned fine-tune can lose to feature extraction" — the corrected run must actually reproduce that ordering or the prose needs rewriting to match the real numbers
 
 ### Weak assumptions
 
-- _(to be filled in)_
+- That the relative accuracy ordering (low-lr fine-tune > feature extraction > high-lr fine-tune) is robust to the epoch count; it is re-verified by rerunning rather than assumed
