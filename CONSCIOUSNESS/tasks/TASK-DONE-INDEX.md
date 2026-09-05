@@ -38,3 +38,4 @@ TASK-DL32|Lesson 15b Efficient and Scalable Deep Learning practical|STORY-DL16|D
 TASK-DL37|Corpus index and Colab badge table|STORY-DL17|DIRECT-DL1|FEAT-DL1|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL37.md|1d|3
 TASK-DL038|Name builder worktrees by seat||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL038.md||
 TASK-DL039|Move claimed task detail cards to active dir||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL039.md||
+TASK-DL040|Add pip install cell to 8b tokenisation notebook|STORY-DL9|DIRECT-DL1|FEAT-DL1|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL040.md||

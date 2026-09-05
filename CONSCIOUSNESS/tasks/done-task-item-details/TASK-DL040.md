@@ -6,9 +6,14 @@ Rejected at review (FEAT-DL1, AC-2). notebooks/8b_embeddings_tokenisation_practi
 
 ## Acceptance criteria
 
-- [ ] **AC-1** — `notebooks/8b_embeddings_tokenisation_practical.ipynb` installs `tokenizers` before its first use (cell 11) and `transformers` before its first use (cell 19), guarded so a local run with the packages already present does not reinstall (matching 12b's `try: import X; except ImportError: %pip install -q X` idiom)
-- [ ] **AC-2** — Passes `scripts/verify_notebook.sh` — executes clean on CPU in under 10 minutes with fixed seeds, no error outputs, no committed cell outputs
-- [ ] **AC-3** — No cell outputs committed, no other cell content changed
+- [x] **AC-1** — `notebooks/8b_embeddings_tokenisation_practical.ipynb` installs `tokenizers` before its first use (cell 11) and `transformers` before its first use (cell 19), guarded so a local run with the packages already present does not reinstall (matching 12b's `try: import X; except ImportError: %pip install -q X` idiom)
+- [x] **AC-2** — Passes `scripts/verify_notebook.sh` — executes clean on CPU in under 10 minutes with fixed seeds, no error outputs, no committed cell outputs
+- [x] **AC-3** — No cell outputs committed, no other cell content changed
+
+## Closing Note
+`scripts/verify_notebook.sh notebooks/8b_embeddings_tokenisation_practical.ipynb` — PASS, clean execution in
+20s (cap 600s). Both guards added verbatim in the sibling 12b idiom (`try: import X; except ImportError:
+%pip install -q X`), prepended to cells 11 and 19 with no other cell content touched.
 
 ## Dependencies
 
