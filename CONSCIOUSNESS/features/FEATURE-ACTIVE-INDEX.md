@@ -8,7 +8,7 @@ FEAT-DL6|in_review|p1|performance|Multilayer Perceptrons and Backpropagation (Le
 FEAT-DL7|in_review|p1|performance|Training Dynamics (Lesson 3)|STORY-DL4|TASK-DL7,TASK-DL8|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL7.md||2026-09-05||
 FEAT-DL8|in_review|p1|performance|Regularisation and Generalisation (Lesson 4)|STORY-DL5|TASK-DL9,TASK-DL10|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL8.md||2026-09-05||
 FEAT-DL9|in_review|p1|performance|Convolutional Networks (Lesson 5)|STORY-DL6|TASK-DL11,TASK-DL12|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL9.md||2026-09-05||
-FEAT-DL10|in_progress|p1|performance|Modern Architectures and Transfer Learning (Lesson 6)|STORY-DL7|TASK-DL13,TASK-DL14|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL10.md||2026-09-05||
+FEAT-DL10|in_progress|p1|performance|Modern Architectures and Transfer Learning (Lesson 6)|STORY-DL7|TASK-DL13,TASK-DL14,TASK-DL044|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL10.md||2026-09-05||
 FEAT-DL11|in_progress|p1|performance|Sequence Models (Lesson 7)|STORY-DL8|TASK-DL15,TASK-DL16|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL11.md||2026-09-05||
 FEAT-DL12|in_progress|p1|performance|Embeddings and Tokenisation (Lesson 8)|STORY-DL9|TASK-DL17,TASK-DL18|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL12.md||2026-09-05||
 FEAT-DL13|in_progress|p1|performance|Attention (Lesson 9)|STORY-DL10|TASK-DL19,TASK-DL20|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL13.md||2026-09-05||
