@@ -49,3 +49,6 @@ chats/
 # supervisor working files
 .dl-supervisor.log
 .dl-complete
+
+# Linked worktrees for builder seats — never part of the corpus.
+.claude/worktrees/
