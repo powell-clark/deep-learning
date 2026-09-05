@@ -16,3 +16,4 @@ TASK-DL16|Lesson 7b Sequence Models practical|STORY-DL8|DIRECT-DL1|FEAT-DL1,FEAT
 TASK-DL17|Lesson 8a Embeddings and Tokenisation theory|STORY-DL9|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL12|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL17.md|1d|3
 TASK-DL18|Lesson 8b Embeddings and Tokenisation practical|STORY-DL9|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL12|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL18.md|1d|3
 TASK-DL19|Lesson 9a Attention theory|STORY-DL10|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL13|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL19.md|1d|3
+TASK-DL20|Lesson 9b Attention practical|STORY-DL10|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL13|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL20.md|1d|3
