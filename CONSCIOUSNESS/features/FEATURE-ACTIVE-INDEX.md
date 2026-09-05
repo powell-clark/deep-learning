@@ -13,7 +13,7 @@ FEAT-DL11|in_review|p1|performance|Sequence Models (Lesson 7)|STORY-DL8|TASK-DL1
 FEAT-DL12|in_review|p1|performance|Embeddings and Tokenisation (Lesson 8)|STORY-DL9|TASK-DL17,TASK-DL18|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL12.md||2026-09-05||
 FEAT-DL13|in_review|p1|performance|Attention (Lesson 9)|STORY-DL10|TASK-DL19,TASK-DL20|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL13.md||2026-09-05||
 FEAT-DL14|in_review|p1|performance|The Transformer (Lesson 10)|STORY-DL11|TASK-DL21,TASK-DL22|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL14.md||2026-09-05||
-FEAT-DL15|in_progress|p1|performance|Language Model Pretraining (Lesson 11)|STORY-DL12|TASK-DL23,TASK-DL24|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL15.md||2026-09-05||
+FEAT-DL15|in_review|p1|performance|Language Model Pretraining (Lesson 11)|STORY-DL12|TASK-DL23,TASK-DL24|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL15.md||2026-09-05||
 FEAT-DL16|in_progress|p1|performance|Fine-tuning and Adaptation (Lesson 12)|STORY-DL13|TASK-DL25,TASK-DL26|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL16.md||2026-09-05||
 FEAT-DL17|in_progress|p1|performance|Alignment: RLHF and Preference Optimisation (Lesson 13)|STORY-DL14|TASK-DL27,TASK-DL28|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL17.md||2026-09-05||
 FEAT-DL18|in_progress|p1|performance|Generative Models (Lesson 14)|STORY-DL15|TASK-DL29,TASK-DL30|CONSCIOUSNESS/features/active-feature-item-details/FEAT-DL18.md||2026-09-05||
