@@ -13,3 +13,4 @@ TASK-DL11|Lesson 5a Convolutional Networks theory|STORY-DL6|DIRECT-DL1|FEAT-DL1,
 TASK-DL12|Lesson 5b Convolutional Networks practical|STORY-DL6|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL9|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL12.md|1d|3
 TASK-DL15|Lesson 7a Sequence Models theory|STORY-DL8|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL11|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL15.md|1d|3
 TASK-DL16|Lesson 7b Sequence Models practical|STORY-DL8|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL11|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL16.md|1d|3
+TASK-DL17|Lesson 8a Embeddings and Tokenisation theory|STORY-DL9|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL12|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL17.md|1d|3
