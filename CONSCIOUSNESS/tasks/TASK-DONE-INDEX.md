@@ -7,3 +7,4 @@ TASK-DL5|Lesson 2a Multilayer Perceptrons and Backpropagation theory|STORY-DL3|D
 TASK-DL6|Lesson 2b Multilayer Perceptrons and Backpropagation practical|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL6.md|1d|3
 TASK-DL7|Lesson 3a Training Dynamics theory|STORY-DL4|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL7|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL7.md|1d|3
 TASK-DL8|Lesson 3b Training Dynamics practical|STORY-DL4|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL7|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL8.md|1d|3
+TASK-DL9|Lesson 4a Regularisation and Generalisation theory|STORY-DL5|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL8|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL9.md|1d|3
