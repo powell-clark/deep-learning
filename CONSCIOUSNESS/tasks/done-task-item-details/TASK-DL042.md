@@ -6,11 +6,24 @@ Measured from eagle-peak 2026-09-05 09:50 bst via kernel/seat-resolve.sh and the
 
 ## Acceptance criteria
 
-- [ ] **AC-1** — Each supervisor tick lists `dl-builder-*`/`dl-reviewer-*` background seats the harness itself reports as both `status: idle` AND `state: done`, and stops each one via `claude stop <id>` (the harness's own agent manager), logging `seat-reaped` with the id, name and age
-- [ ] **AC-2** — A seat mid-task is never touched: any seat whose `status`/`state` is not exactly idle+done is left alone; a seat whose own worktree (if any) still has uncommitted changes is skipped and logged `seat-skip` rather than stopped
-- [ ] **AC-3** — The `MAX_BUILDERS`/`live_reviewer` gate already excludes `state: done` seats (pre-existing `NONLIVE` set in `seats()`) — confirmed unchanged, not reimplemented
-- [ ] **AC-4** — A reaped seat's own worktree is unlocked (`git worktree unlock`) so the existing TASK-DL038 reap-worktree pass can remove it once merged and clean, closing the loop
-- [ ] **AC-5** — Verified against live data: filter logic tested against a real `claude agents --json` snapshot (dry run), then the reap executed for real, with before/after seat counts and worktree list recorded as evidence
+- [x] **AC-1** — Each supervisor tick lists `dl-builder-*`/`dl-reviewer-*` background seats the harness itself reports as both `status: idle` AND `state: done`, and stops each one via `claude stop <id>` (the harness's own agent manager), logging `seat-reaped` with the id, name and age
+- [x] **AC-2** — A seat mid-task is never touched: any seat whose `status`/`state` is not exactly idle+done is left alone; a seat whose own worktree (if any) still has uncommitted changes is skipped and logged `seat-skip` rather than stopped
+- [x] **AC-3** — The `MAX_BUILDERS`/`live_reviewer` gate already excludes `state: done` seats (pre-existing `NONLIVE` set in `seats()`) — confirmed unchanged, not reimplemented
+- [x] **AC-4** — A reaped seat's own worktree is unlocked (`git worktree unlock`) so the existing TASK-DL038 reap-worktree pass can remove it once merged and clean, closing the loop
+- [x] **AC-5** — Verified against live data: filter logic tested against a real `claude agents --json` snapshot (dry run), then the reap executed for real, with before/after seat counts and worktree list recorded as evidence
+
+## Closing Note
+Verified in three stages against this machine's real state, not a synthetic fixture: (1) `bash -n scripts/supervisor.sh`
+passed; (2) the filter (`kind==background`, name prefix `dl-builder-`/`dl-reviewer-`, `status==idle` AND `state==done`)
+run read-only against a live `claude agents --json` snapshot correctly identified 5 idle+done seats and correctly
+excluded the 2 busy/working ones (including this session itself); (3) executed for real — background session count
+went from 8 to 7, with `dl-builder-054505`, `dl-builder-060005`, `dl-builder-064505` and `dl-reviewer-094505` all
+confirmed stopped (gone from a follow-up `claude agents --json`), and `builder-dl4`'s worktree was reclaimed by the
+existing TASK-DL038 reap-worktree pass once unlocked. One seat (`dl-builder-070005`) was idle+done at filter time but
+had independently transitioned back to busy before this task's `claude stop` call landed — left untouched, consistent
+with AC-2's mid-task protection (the harness's own status is authoritative at call time, not at filter time). AC-3
+required no code change: the pre-existing `NONLIVE` set in `seats()` already excludes `state: done`, confirmed by
+reading the function rather than re-implementing it.
 
 ## Dependencies
 

@@ -104,6 +104,47 @@ while IFS= read -r line; do
 done < <(timeout 10 git worktree list --porcelain 2>/dev/null)
 reap_worktree
 
+# A finished builder/reviewer seat is already excluded from the live count below
+# (state 'done' is NONLIVE), but its process is never stopped and its worktree's
+# lock is never released -- it just sits there holding RAM. TASK-DL042: seven
+# idle-done dl-builder-* seats plus a dl-reviewer-* were measured alive at once on
+# 2026-09-05, contributing to a hard freeze under earlyoom (INC-KOI031) and nine
+# further OOM kills. Stop only a seat the harness itself reports BOTH idle and
+# done -- never one mid-task -- and only once its own worktree (if any) has no
+# uncommitted changes, the same clean-before-touch rule the worktree reap above
+# already uses.
+timeout 60 claude agents --json 2>/dev/null | timeout 20 python3 -c "
+import sys, json
+try:
+    seats = json.load(sys.stdin)
+except Exception:
+    sys.exit(0)
+for s in seats:
+    name = s.get('name') or ''
+    if s.get('kind') != 'background':
+        continue
+    if not (name.startswith('dl-builder-') or name.startswith('dl-reviewer-')):
+        continue
+    if s.get('status') != 'idle' or s.get('state') != 'done':
+        continue
+    print(s.get('id', '') + '\t' + name + '\t' + (s.get('cwd') or '') + '\t' + str(s.get('startedAt', 0)))
+" 2>/dev/null | while IFS=$'\t' read -r seat_id seat_name seat_cwd seat_started; do
+  [ -n "$seat_id" ] || continue
+  if [ -n "$seat_cwd" ] && [ "$seat_cwd" != "$REPO" ] && [ -d "$seat_cwd" ]; then
+    if [ -n "$(timeout 10 git -C "$seat_cwd" status --porcelain 2>/dev/null)" ]; then
+      note seat-skip "$seat_name ($seat_id) idle+done but worktree $seat_cwd is dirty -- left alone"
+      continue
+    fi
+    timeout 10 git worktree unlock "$seat_cwd" 2>/dev/null || true
+  fi
+  age_min=$(( ( $(date +%s%3N) - seat_started ) / 60000 ))
+  if timeout 15 claude stop "$seat_id" >/dev/null 2>&1; then
+    note seat-reaped "$seat_name ($seat_id) idle+done, age ${age_min}m"
+  else
+    note seat-reap-failed "$seat_name ($seat_id) -- claude stop exited nonzero"
+  fi
+done
+
 backlog=$(( $(wc -l < CONSCIOUSNESS/tasks/TASK-BACKLOG-INDEX.md) - 1 ))
 active=$(( $(wc -l < CONSCIOUSNESS/tasks/TASK-ACTIVE-INDEX.md) - 1 ))
 [ "$backlog" -lt 0 ] && backlog=0
