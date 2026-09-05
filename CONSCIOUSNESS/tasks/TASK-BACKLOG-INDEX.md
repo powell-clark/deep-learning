@@ -1,5 +1,4 @@
 id|priority|title|story_ids|directive_id|feature_ids|doc|blocked_by|blocks|assignee|parent_task_id|sequence|expected_duration|story_points
-TASK-DL9|p2|Lesson 4a Regularisation and Generalisation theory|STORY-DL5|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL8|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL9.md|||||9|1d|3
 TASK-DL10|p2|Lesson 4b Regularisation and Generalisation practical|STORY-DL5|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL8|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL10.md|TASK-DL9||||10|1d|3
 TASK-DL11|p2|Lesson 5a Convolutional Networks theory|STORY-DL6|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL9|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL11.md|||||11|1d|3
 TASK-DL12|p2|Lesson 5b Convolutional Networks practical|STORY-DL6|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL9|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL12.md|TASK-DL11||||12|1d|3
