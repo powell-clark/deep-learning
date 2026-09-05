@@ -1,7 +1,6 @@
 id|priority|title|story_ids|directive_id|feature_ids|doc|blocked_by|blocks|assignee|parent_task_id|sequence|expected_duration|story_points
 TASK-DL26|p3|Lesson 12b Fine-tuning and Adaptation practical|STORY-DL13|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL16|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL26.md|TASK-DL25||||26|1d|3
 TASK-DL30|p3|Lesson 14b Generative Models practical|STORY-DL15|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL18|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL30.md|TASK-DL29||||30|1d|3
-TASK-DL31|p3|Lesson 15a Efficient and Scalable Deep Learning theory|STORY-DL16|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL19|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL31.md|||||31|1d|3
 TASK-DL32|p3|Lesson 15b Efficient and Scalable Deep Learning practical|STORY-DL16|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL19|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL32.md|TASK-DL31||||32|1d|3
 TASK-DL33|p4|X1 Debugging Deep Networks notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3,FEAT-DL20|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL33.md|||||33|1d|3
 TASK-DL34|p4|X2 Evaluation and Benchmarking notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3,FEAT-DL20|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL34.md|||||34|1d|3
