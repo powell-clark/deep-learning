@@ -30,3 +30,4 @@ TASK-DL33|X1 Debugging Deep Networks notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEA
 TASK-DL24|Lesson 11b Language Model Pretraining practical|STORY-DL12|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL15|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL24.md|1d|3
 TASK-DL34|X2 Evaluation and Benchmarking notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3,FEAT-DL20|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL34.md|1d|3
 TASK-DL28|Lesson 13b Alignment: RLHF and Preference Optimisation practical|STORY-DL14|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL17|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL28.md|1d|3
+TASK-DL36|X4 Research Frontiers notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3,FEAT-DL20|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL36.md|1d|3
