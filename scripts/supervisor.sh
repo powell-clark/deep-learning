@@ -107,13 +107,26 @@ features_open=$(grep -c '^FEAT-' CONSCIOUSNESS/features/FEATURE-ACTIVE-INDEX.md 
 # MAX_BUILDERS never bound and the 02:15 tick started a second builder while the
 # first was still going. Counting by exclusion from the terminal states is robust
 # to further state names being added.
+#
+# 'blocked' is excluded too, alongside the terminal states — NOT treated as live.
+# Measured 2026-09-05: dl-builder-022304 hit the account's rolling Claude usage cap
+# mid-task at 02:11 ("You've hit your session limit"), its process then exited, and
+# `claude agents --json` kept reporting it as state=blocked for 90+ minutes across
+# six ticks — with MAX_BUILDERS=1 permanently pinned by that phantom seat while 17
+# unblocked layer-0 tasks sat idle and every tick logged "nothing to start". These
+# seats always launch with --permission-mode bypassPermissions, so 'blocked' can
+# never mean a live permission wait for one of them; it only means stalled or dead.
+# Excluding it risks a second seat starting against the same claimed task if the
+# first one somehow resumes, but that is safe here: the hardened loop protocol's
+# shipped-check pre-flight and BUILDER.md's push-before-build claim make a repeat
+# claim a no-op and a repeat build detectable before it ships.
 TERMINAL_STATES="done failed killed stopped cancelled error"
 seats() { timeout 60 claude agents --json 2>/dev/null | timeout 20 python3 -c "import sys,json
-TERMINAL={'done','failed','killed','stopped','cancelled','error'}
+NONLIVE={'done','failed','killed','stopped','cancelled','error','blocked'}
 try:
     a=json.load(sys.stdin)
     print(sum(1 for s in a
-              if (s.get('state') or '') not in TERMINAL
+              if (s.get('state') or '') not in NONLIVE
               and '$1' in (s.get('name') or '')))
 except Exception: print(0)" 2>/dev/null || echo 0; }
 
