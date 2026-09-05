@@ -1,0 +1,1 @@
+{"schema_version":1,"event":"status-change","task_id":"TASK-DL23","from":"backlog","to":"in_progress","note":"claimed by builder-dl3 seat","timestamp":"2026-09-05 08:25:46.021 bst","session_id":"dl-01f75049","canonical_id":"01f75049-bac9-4317-96a1-d15b383b55ff","branch":"worktree-builder-dl3"}
