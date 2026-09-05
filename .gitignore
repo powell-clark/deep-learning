@@ -52,3 +52,4 @@ chats/
 
 # Linked worktrees for builder seats — never part of the corpus.
 .claude/worktrees/
+.dl-closeout-tries
