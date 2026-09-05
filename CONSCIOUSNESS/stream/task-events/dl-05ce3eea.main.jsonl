@@ -1,0 +1,2 @@
+{"schema_version":1,"event":"status-change","task_id":"TASK-DL23","from":"in_progress","to":"in_review","note":"verifier PASS","timestamp":"2026-09-05 08:38:59.906 bst","session_id":"dl-05ce3eea","canonical_id":"05ce3eea-3efb-4135-a9bc-19604ce61d57","branch":"main"}
+{"schema_version":1,"event":"status-change","task_id":"TASK-DL23","from":"in_review","to":"done","timestamp":"2026-09-05 08:39:03.739 bst","session_id":"dl-05ce3eea","canonical_id":"05ce3eea-3efb-4135-a9bc-19604ce61d57","branch":"main"}
