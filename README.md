@@ -5,7 +5,7 @@ transformers, pretraining, alignment, generative models and deployment. Every me
 derived from first principles, implemented from scratch in NumPy, then reproduced with
 PyTorch or Hugging Face. All notebooks run in Google Colab with no local setup.
 
-**Status**: 🚧 In development — 0 of 36 notebooks complete.
+**Status**: ✅ CORPUS-READY — 36 of 36 notebooks complete.
 
 Fourth in the machine-learning series, after
 [supervised-learning](https://github.com/powell-clark/supervised-learning),
@@ -25,28 +25,28 @@ Fourth in the machine-learning series, after
 
 | Lesson | Topic | Theory | Practical |
 |---|---|---|---|
-| 0 | Introduction to Deep Learning | ⏳ | ⏳ |
-| 1 | From Linear Models to Neurons | ⏳ | ⏳ |
-| 2 | Multilayer Perceptrons and Backpropagation | ⏳ | ⏳ |
-| 3 | Training Dynamics | ⏳ | ⏳ |
-| 4 | Regularisation and Generalisation | ⏳ | ⏳ |
-| 5 | Convolutional Networks | ⏳ | ⏳ |
-| 6 | Modern Architectures and Transfer Learning | ⏳ | ⏳ |
-| 7 | Sequence Models | ⏳ | ⏳ |
-| 8 | Embeddings and Tokenisation | ⏳ | ⏳ |
-| 9 | Attention | ⏳ | ⏳ |
-| 10 | The Transformer | ⏳ | ⏳ |
-| 11 | Language Model Pretraining | ⏳ | ⏳ |
-| 12 | Fine-tuning and Adaptation | ⏳ | ⏳ |
-| 13 | Alignment: RLHF and Preference Optimisation | ⏳ | ⏳ |
-| 14 | Generative Models | ⏳ | ⏳ |
-| 15 | Efficient and Scalable Deep Learning | ⏳ | ⏳ |
-| X1 | Debugging Deep Networks | ⏳ | |
-| X2 | Evaluation and Benchmarking | ⏳ | |
-| X3 | Deployment and Safety | ⏳ | |
-| X4 | Research Frontiers | ⏳ | |
+| 0 | Introduction to Deep Learning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/0a_intro_deep_learning_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/0b_intro_deep_learning_practical.ipynb) |
+| 1 | From Linear Models to Neurons | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/1a_linear_to_neurons_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/1b_linear_to_neurons_practical.ipynb) |
+| 2 | Multilayer Perceptrons and Backpropagation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/2a_mlp_backprop_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/2b_mlp_backprop_practical.ipynb) |
+| 3 | Training Dynamics | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/3a_training_dynamics_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/3b_training_dynamics_practical.ipynb) |
+| 4 | Regularisation and Generalisation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/4a_regularisation_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/4b_regularisation_practical.ipynb) |
+| 5 | Convolutional Networks | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/5a_convolutional_networks_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/5b_convolutional_networks_practical.ipynb) |
+| 6 | Modern Architectures and Transfer Learning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/6a_modern_architectures_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/6b_modern_architectures_practical.ipynb) |
+| 7 | Sequence Models | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/7a_sequence_models_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/7b_sequence_models_practical.ipynb) |
+| 8 | Embeddings and Tokenisation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/8a_embeddings_tokenisation_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/8b_embeddings_tokenisation_practical.ipynb) |
+| 9 | Attention | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/9a_attention_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/9b_attention_practical.ipynb) |
+| 10 | The Transformer | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/10a_the_transformer_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/10b_the_transformer_practical.ipynb) |
+| 11 | Language Model Pretraining | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/11a_lm_pretraining_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/11b_lm_pretraining_practical.ipynb) |
+| 12 | Fine-tuning and Adaptation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/12a_finetuning_adaptation_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/12b_finetuning_adaptation_practical.ipynb) |
+| 13 | Alignment: RLHF and Preference Optimisation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/13a_alignment_rlhf_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/13b_alignment_rlhf_practical.ipynb) |
+| 14 | Generative Models | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/14a_generative_models_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/14b_generative_models_practical.ipynb) |
+| 15 | Efficient and Scalable Deep Learning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/15a_efficient_scalable_theory.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/15b_efficient_scalable_practical.ipynb) |
+| X1 | Debugging Deep Networks | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/X1_debugging_deep_networks.ipynb) | |
+| X2 | Evaluation and Benchmarking | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/X2_evaluation_benchmarking.ipynb) | |
+| X3 | Deployment and Safety | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/X3_deployment_safety.ipynb) | |
+| X4 | Research Frontiers | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/powell-clark/deep-learning/blob/main/notebooks/X4_research_frontiers.ipynb) | |
 
-The badge table is generated by the final task once every notebook lands.
+See [CURRICULUM_PLAN.md](CURRICULUM_PLAN.md) for what each notebook covers.
 
 ## Local use
 
