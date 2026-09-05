@@ -26,3 +26,4 @@ TASK-DL29|Lesson 14a Generative Models theory|STORY-DL15|DIRECT-DL1|FEAT-DL1,FEA
 TASK-DL23|Lesson 11a Language Model Pretraining theory|STORY-DL12|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL15|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL23.md|1d|3
 TASK-DL30|Lesson 14b Generative Models practical|STORY-DL15|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL18|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL30.md|1d|3
 TASK-DL25|Lesson 12a Fine-tuning and Adaptation theory|STORY-DL13|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL16|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL25.md|1d|3
+TASK-DL24|Lesson 11b Language Model Pretraining practical|STORY-DL12|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL15|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL24.md|1d|3
