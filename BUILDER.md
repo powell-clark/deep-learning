@@ -57,6 +57,18 @@ theory notebook (`a`) — build the theory one first.
 ```bash
 node "$P/pgps/update-task-status-cli.js" --project-root "$REPO" --task TASK-DLn --to in_progress \
   --note "claimed by $(hostname) builder seat"
+```
+
+If the card is still sitting in `backlog-task-item-details/` after that (the CLI only
+relocates a stub, no-contract card automatically — a properly-specified card is left in
+place), move it yourself and fix the `doc` column in `TASK-ACTIVE-INDEX.md` to match:
+
+```bash
+git mv CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DLn.md CONSCIOUSNESS/tasks/active-task-item-details/TASK-DLn.md
+sed -i 's|backlog-task-item-details/TASK-DLn.md|active-task-item-details/TASK-DLn.md|' CONSCIOUSNESS/tasks/TASK-ACTIVE-INDEX.md
+```
+
+```bash
 git add -A && git commit -q -m "chore: claim TASK-DLn" -m "Authored-By: Emmanuel Powell-Clark <emmanuel@powellclark.com>" && git push
 ```
 
@@ -66,7 +78,7 @@ Push the claim **before** building. Another seat must be able to see it.
 
 Read, in this order, and do not skip any of them:
 
-- `CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DLn.md` — the acceptance criteria you must satisfy
+- `CONSCIOUSNESS/tasks/active-task-item-details/TASK-DLn.md` — the acceptance criteria you must satisfy
 - the parent story card under `CONSCIOUSNESS/stories/backlog-story-item-details/`
 - `syllabus/manifest.yaml` — the exact section headings your notebook must contain
 - one existing notebook from a sibling series for voice, if any exist yet in `notebooks/`
@@ -110,11 +122,17 @@ node "$P/pgps/update-task-status-cli.js" --project-root "$REPO" --task TASK-DLn 
   --verdict bypass-approved --review-notes "auto-close: task gate is auto-approve; scripts/verify_notebook.sh PASS"
 ```
 
-Then move the detail card to match its new lifecycle state and fix the `doc` column:
+Then move the detail card to match its new lifecycle state and fix the `doc` column. The
+card may be sitting in either `active-task-item-details/` (if step 2 moved it) or still
+in `backlog-task-item-details/` (if it was claimed before this fix landed, or the CLI
+never relocated it) — move it from wherever it actually is:
 
 ```bash
-git mv CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DLn.md CONSCIOUSNESS/tasks/done-task-item-details/TASK-DLn.md
-sed -i 's|backlog-task-item-details/TASK-DLn.md|done-task-item-details/TASK-DLn.md|' CONSCIOUSNESS/tasks/TASK-DONE-INDEX.md
+git mv CONSCIOUSNESS/tasks/active-task-item-details/TASK-DLn.md CONSCIOUSNESS/tasks/done-task-item-details/TASK-DLn.md \
+  || git mv CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DLn.md CONSCIOUSNESS/tasks/done-task-item-details/TASK-DLn.md
+sed -i -e 's|active-task-item-details/TASK-DLn.md|done-task-item-details/TASK-DLn.md|' \
+       -e 's|backlog-task-item-details/TASK-DLn.md|done-task-item-details/TASK-DLn.md|' \
+  CONSCIOUSNESS/tasks/TASK-DONE-INDEX.md
 ```
 
 Tick the acceptance criteria in the card (`- [ ]` becomes `- [x]`) and add a short closing
