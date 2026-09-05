@@ -1,6 +1,5 @@
 id|priority|title|story_ids|directive_id|feature_ids|doc|blocked_by|blocks|assignee|parent_task_id|sequence|expected_duration|story_points
 TASK-DL14|p2|Lesson 6b Modern Architectures and Transfer Learning practical|STORY-DL7|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL10|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL14.md|TASK-DL13||||14|1d|3
-TASK-DL15|p2|Lesson 7a Sequence Models theory|STORY-DL8|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL11|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL15.md|||||15|1d|3
 TASK-DL16|p2|Lesson 7b Sequence Models practical|STORY-DL8|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL11|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL16.md|TASK-DL15||||16|1d|3
 TASK-DL17|p3|Lesson 8a Embeddings and Tokenisation theory|STORY-DL9|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL12|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL17.md|||||17|1d|3
 TASK-DL18|p3|Lesson 8b Embeddings and Tokenisation practical|STORY-DL9|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL12|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL18.md|TASK-DL17||||18|1d|3
