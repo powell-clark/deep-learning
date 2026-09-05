@@ -42,3 +42,4 @@ TASK-DL040|Add pip install cell to 8b tokenisation notebook|STORY-DL9|DIRECT-DL1
 TASK-DL041|Add pip install cell to 11b pretraining notebook|STORY-DL12|DIRECT-DL1|FEAT-DL1|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL041.md||
 TASK-DL042|Reap finished builder seats||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL042.md||
 TASK-DL043|BUILDER.md worktree naming collision||DIRECT-DL1||CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL043.md||
+TASK-DL044|Fix mismatched fine-tuning budget in 6b|STORY-DL7|DIRECT-DL1|FEAT-DL10|TASK-DL044.md||

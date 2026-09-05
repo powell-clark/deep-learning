@@ -6,9 +6,19 @@ Rejected at review (AC-6). 6b_modern_architectures_practical.ipynb trains featur
 
 ## Acceptance criteria
 
-- [ ] Feature extraction (cell 12) and both fine-tuning runs (cell 15) train for the same number of epochs
-- [ ] `scripts/verify_notebook.sh notebooks/6b_modern_architectures_practical.ipynb` prints `PASS`
-- [ ] The comparison narrative in cells 16 and 19 matches the accuracies actually produced at the corrected epoch count
+- [x] Feature extraction (cell 12) and both fine-tuning runs (cell 15) train for the same number of epochs
+- [x] `scripts/verify_notebook.sh notebooks/6b_modern_architectures_practical.ipynb` prints `PASS`
+- [x] The comparison narrative in cells 16 and 19 matches the accuracies actually produced at the corrected epoch count
+
+## Closing note
+
+Introduced a shared `EPOCHS = 8` constant (matching the prior fine-tuning budget, since
+lowering feature extraction is cheaper than raising fine-tuning) and pointed all three
+`train_classifier` calls at it. Verifier: `PASS: 6b_modern_architectures_practical.ipynb —
+clean execution in 211s (cap 600s)`. Re-executed to confirm the narrative still holds at
+the corrected budget: feature extraction 33.5%, fine-tune lr=1e-4 41.0% (beats feature
+extraction, matching cell 19's first claim), fine-tune lr=5e-2 16.0% (loses badly, matching
+cell 19's third claim) — no prose changes needed in cells 16 or 19.
 
 ## Dependencies
 
