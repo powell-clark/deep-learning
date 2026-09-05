@@ -235,8 +235,13 @@ if [ "$live_reviewer" -eq 0 ] && { [ "$awaiting" -gt 0 ] || { [ "$remaining" -eq
 fi
 
 if [ "$remaining" -gt 0 ] && [ "$live_builders" -lt "$MAX_BUILDERS" ]; then
-  start_seat "dl-builder-$(date +%H%M%S)" \
-    "Read BUILDER.md in this repository and follow it exactly, looping until no claimable task remains. You are unattended: never ask a question, never wait for input."
+  seat_name="dl-builder-$(date +%H%M%S)"
+  # TASK-DL038: name the isolation worktree after this seat's own unique name,
+  # never a guessed builder-dl<N> -- two seats guessing the same small integer
+  # collided on one physical worktree directory (2026-09-05), each silently
+  # overwriting the other's in-progress file edits.
+  start_seat "$seat_name" \
+    "Read BUILDER.md in this repository and follow it exactly, looping until no claimable task remains. You are unattended: never ask a question, never wait for input. When you isolate into a worktree, call EnterWorktree with name \"$seat_name\" exactly -- never guess a generic name. If EnterWorktree reports a worktree of that name already exists, treat that as a fault: stop and report rather than resuming into it."
 else
   note idle "remaining=${remaining} awaiting=${awaiting} features=${features_open} builders=${live_builders} reviewer=${live_reviewer} — nothing to start"
 fi
