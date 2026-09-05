@@ -34,3 +34,4 @@ TASK-DL36|X4 Research Frontiers notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3
 TASK-DL35|X3 Deployment and Safety notebook|STORY-DL17|DIRECT-DL1|FEAT-DL1,FEAT-DL3,FEAT-DL20|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL35.md|1d|3
 TASK-DL31|Lesson 15a Efficient and Scalable Deep Learning theory|STORY-DL16|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL19|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL31.md|1d|3
 TASK-DL26|Lesson 12b Fine-tuning and Adaptation practical|STORY-DL13|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL16|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL26.md|1d|3
+TASK-DL32|Lesson 15b Efficient and Scalable Deep Learning practical|STORY-DL16|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL19|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL32.md|1d|3
