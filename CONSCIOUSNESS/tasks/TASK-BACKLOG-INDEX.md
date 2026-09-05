@@ -1,2 +1,3 @@
 id|priority|title|story_ids|directive_id|feature_ids|doc|blocked_by|blocks|assignee|parent_task_id|sequence|expected_duration|story_points
 TASK-DL37|p4|Corpus index and Colab badge table|STORY-DL17|DIRECT-DL1|FEAT-DL1|CONSCIOUSNESS/tasks/backlog-task-item-details/TASK-DL37.md|TASK-DL1,TASK-DL2,TASK-DL3,TASK-DL4,TASK-DL5,TASK-DL6,TASK-DL7,TASK-DL8,TASK-DL9,TASK-DL10,TASK-DL11,TASK-DL12,TASK-DL13,TASK-DL14,TASK-DL15,TASK-DL16,TASK-DL17,TASK-DL18,TASK-DL19,TASK-DL20,TASK-DL21,TASK-DL22,TASK-DL23,TASK-DL24,TASK-DL25,TASK-DL26,TASK-DL27,TASK-DL28,TASK-DL29,TASK-DL30,TASK-DL31,TASK-DL32,TASK-DL33,TASK-DL34,TASK-DL35,TASK-DL36||||37|1d|3
+TASK-DL038|p2|Name builder worktrees by seat||||TASK-DL038.md|||||a0ivq||
