@@ -6,9 +6,14 @@ Rejected at review (FEAT-DL1, AC-2). notebooks/11b_lm_pretraining_practical.ipyn
 
 ## Acceptance criteria
 
-- [ ] **AC-1** — `notebooks/11b_lm_pretraining_practical.ipynb` installs `transformers` before its first use (cell 17, `AutoModelForCausalLM`/`AutoTokenizer` for distilgpt2), guarded so a local run with the package already present does not reinstall (matching 12b's `try: import X; except ImportError: %pip install -q X` idiom)
-- [ ] **AC-2** — Passes `scripts/verify_notebook.sh` — executes clean on CPU in under 10 minutes with fixed seeds, no error outputs, no committed cell outputs
-- [ ] **AC-3** — No cell outputs committed, no other cell content changed
+- [x] **AC-1** — `notebooks/11b_lm_pretraining_practical.ipynb` installs `transformers` before its first use (cell 17, `AutoModelForCausalLM`/`AutoTokenizer` for distilgpt2), guarded so a local run with the package already present does not reinstall (matching 12b's `try: import X; except ImportError: %pip install -q X` idiom)
+- [x] **AC-2** — Passes `scripts/verify_notebook.sh` — executes clean on CPU in under 10 minutes with fixed seeds, no error outputs, no committed cell outputs
+- [x] **AC-3** — No cell outputs committed, no other cell content changed
+
+## Closing Note
+`scripts/verify_notebook.sh notebooks/11b_lm_pretraining_practical.ipynb` — PASS, clean execution in 25s
+(cap 600s). Guard added verbatim in the sibling 12b idiom (`try: import transformers; except ImportError:
+%pip install -q transformers`), prepended to cell 17 with no other cell content touched.
 
 ## Dependencies
 
