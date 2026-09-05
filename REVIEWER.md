@@ -76,12 +76,33 @@ node "$P/append-task-cli.js" --title "Fix <specific defect> in <notebook>" --pri
 
 Set `--priority p0` instead if this is the second rejection of the same notebook.
 
+## One feature per seat
+
+Judge **exactly one feature, then commit, push and exit.** Do not go on to a second.
+The supervisor starts a fresh seat on the next tick, and a fresh seat means a fresh
+context window.
+
+This matters most for the cross-cutting features. FEAT-DL1, FEAT-DL2 and FEAT-DL3 each
+own more than thirty tasks, and a seat that tries to read thirty notebooks in full will
+exhaust its window and start approving on fumes — which is worse than not reviewing at
+all, because it produces a verdict that looks considered and is not.
+
+So scale the reading to the feature:
+
+- **Six notebooks or fewer** — read every one in full. This is the normal case.
+- **More than six** — read the criterion, then read a sample that can actually falsify it:
+  the earliest notebook, the latest, and any the criterion names specifically. Say in your
+  notes exactly which notebooks you read and that the rest were judged on the verifier's
+  execution evidence. An honest partial basis stated plainly is a good review; a claim to
+  have read thirty notebooks you did not read is not.
+
 ## Rules
 
-- One feature at a time, fully read, before the next.
+- One feature per seat, fully judged, then exit.
 - Approve only what you would put your name to; this is the last gate before the operator reads it.
 - Never approve a feature whose notebooks you have not opened.
 - Never ask the operator anything. There is no human gate on this build — decide.
 - When both lists are empty, commit and push any files you changed, say so, and exit.
+- Never approve a feature whose criterion you cannot point at concrete evidence for.
 - Judge a feature against the notebooks that exist. A feature owning 37 tasks is judged on
   the ones that are done; if some are still pending, it is not READY and you leave it alone.
