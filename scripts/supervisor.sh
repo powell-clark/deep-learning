@@ -50,14 +50,30 @@ timeout 60 git pull --rebase --autostash -q 2>/dev/null || note pull-skipped "pu
 # Fast-forward only: if the histories have diverged this does nothing and says so, rather
 # than attempting a merge no one asked for.
 timeout 60 git fetch origin -q 2>/dev/null || true
+# Fast-forward when the histories still line up, and fall back to a real merge when
+# they do not. Fast-forward-only was not enough: the moment ANY commit lands on main
+# that the builder branch does not carry -- a supervisor fix, an operator edit -- the
+# two histories diverge permanently and --ff-only silently does nothing on every tick
+# thereafter. Measured 2026-09-05: main sat 1 ahead / 4 behind for three ticks with
+# three finished notebooks invisible on main and no log line saying so.
+# The merge is safe here: the id-bearing append-only indexes carry merge=union with a
+# CI duplicate-id backstop, and notebooks are new files. A genuine conflict aborts and
+# is reported rather than half-resolved.
 for br in $(git branch -r --format='%(refname:short)' 2>/dev/null | grep -E 'origin/worktree-' || true); do
-  if git merge-base --is-ancestor HEAD "$br" 2>/dev/null; then
-    before=$(git rev-parse --short HEAD)
-    if timeout 60 git merge --ff-only "$br" -q 2>/dev/null; then
-      after=$(git rev-parse --short HEAD)
-      [ "$before" != "$after" ] && note fast-forwarded "main $before -> $after from $br"
-      timeout 60 git push origin main -q 2>/dev/null || note push-skipped "could not push main"
-    fi
+  before=$(git rev-parse --short HEAD)
+  if timeout 60 git merge --ff-only "$br" -q 2>/dev/null; then
+    :
+  elif timeout 120 git merge --no-edit -m "chore: integrate $br into main" "$br" -q 2>/dev/null; then
+    :
+  else
+    timeout 60 git merge --abort 2>/dev/null || true
+    note merge-conflict "could not integrate $br into main; left main untouched"
+    continue
+  fi
+  after=$(git rev-parse --short HEAD)
+  if [ "$before" != "$after" ]; then
+    note integrated "main $before -> $after from $br"
+    timeout 60 git push origin main -q 2>/dev/null || note push-skipped "could not push main"
   fi
 done
 
