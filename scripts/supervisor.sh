@@ -60,14 +60,24 @@ except Exception: print(0)' 2>/dev/null || echo 0)
 fi
 [ -z "${awaiting:-}" ] && awaiting=0
 
+# Count LIVE seats. The harness reports a working background session as state
+# 'working', not 'running' — matching 'running' made this return 0 always, so
+# MAX_BUILDERS never bound and the 02:15 tick started a second builder while the
+# first was still going. Counting by exclusion from the terminal states is robust
+# to further state names being added.
+TERMINAL_STATES="done failed killed stopped cancelled error"
 seats() { timeout 60 claude agents --json 2>/dev/null | timeout 20 python3 -c "import sys,json
+TERMINAL={'done','failed','killed','stopped','cancelled','error'}
 try:
     a=json.load(sys.stdin)
-    print(sum(1 for s in a if s.get('state')=='running' and '$1' in (s.get('name') or '')))
+    print(sum(1 for s in a
+              if (s.get('state') or '') not in TERMINAL
+              and '$1' in (s.get('name') or '')))
 except Exception: print(0)" 2>/dev/null || echo 0; }
 
-live_builders=$(seats dl-builder); [ -z "${live_builders:-}" ] && live_builders=0
-live_reviewer=$(seats dl-reviewer); [ -z "${live_reviewer:-}" ] && live_reviewer=0
+# Fail SAFE: an uncountable seat census means "assume busy", never "assume idle".
+live_builders=$(seats dl-builder); [ -z "${live_builders:-}" ] && live_builders="$MAX_BUILDERS"
+live_reviewer=$(seats dl-reviewer); [ -z "${live_reviewer:-}" ] && live_reviewer=1
 
 free_gb=$(free -g | awk '/^Mem:/{print $7}')
 load1=$(awk '{printf "%d", $1}' /proc/loadavg)
@@ -88,8 +98,16 @@ if [ "$free_gb" -lt "$MIN_FREE_GB" ] || [ "$load1" -gt "$MAX_LOAD" ] \
   exit 0
 fi
 
+# Seats are driven by BUILDER.md / REVIEWER.md, not by /consciousness:on.
+# The consciousness plugin is enabled only in this repo's .claude/settings.json, and a
+# --bg seat does not register project-scoped plugins even with --setting-sources, so
+# every seat died on "Unknown command: /consciousness:on" and sat in state 'blocked'.
+# The PGPS CLIs themselves work fine through node, so the runbooks drive the same loop
+# by hand. --setting-sources is kept: it costs nothing and restores the plugin if the
+# repo is later trusted interactively.
 start_seat() {
   timeout 120 env -C "$REPO" claude --bg --name "$1" --model sonnet --effort high \
+      --setting-sources user,project,local \
       --permission-mode bypassPermissions "$2" >/dev/null 2>&1
   local rc=$?
   if [ $rc -eq 0 ]; then
@@ -107,7 +125,8 @@ if [ "$awaiting" -gt 0 ] && [ "$live_reviewer" -eq 0 ]; then
 fi
 
 if [ "$remaining" -gt 0 ] && [ "$live_builders" -lt "$MAX_BUILDERS" ]; then
-  start_seat "dl-builder-$(date +%H%M%S)" "/consciousness:on"
+  start_seat "dl-builder-$(date +%H%M%S)" \
+    "Read BUILDER.md in this repository and follow it exactly, looping until no claimable task remains. You are unattended: never ask a question, never wait for input."
 else
   note idle "remaining=${remaining} awaiting=${awaiting} builders=${live_builders} reviewer=${live_reviewer} — nothing to start"
 fi
