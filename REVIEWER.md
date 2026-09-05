@@ -22,7 +22,11 @@ You judge what a script cannot:
 4. **Series consistency.** From-scratch NumPy implementation present in theory notebooks; a
    real framework counterpart in practicals; the two shown to agree where both exist.
 
-## The list
+## Finding what to judge
+
+Two sources, in this order.
+
+**1. Anything already waiting for a verdict:**
 
 ```bash
 MK=~/.claude/plugins/marketplaces/powell-clark/adapters/claude-code/dist/packages/core
@@ -30,6 +34,20 @@ node "$MK/review/sweep-cli.js" --list
 ```
 
 Use that path, not the plugin cache — the cached build cannot load `js-yaml` (known defect).
+
+**2. Features that have become ready but nobody has promoted.** This list is usually the
+real one: task gates are auto-approve, so tasks close themselves and never place a feature
+into `in_review`. A feature is ready when every id in its `task_ids` column appears in
+`CONSCIOUSNESS/tasks/TASK-DONE-INDEX.md`.
+
+```bash
+python3 scripts/ready_features.py .
+```
+
+Promote a READY feature to `in_review` by editing its `status` column in
+`CONSCIOUSNESS/features/FEATURE-ACTIVE-INDEX.md`, then record your verdict below. That
+promotion is the step that was missing; without it a finished curriculum still reads as
+20 features in progress.
 
 ## Recording a verdict
 
@@ -64,4 +82,6 @@ Set `--priority p0` instead if this is the second rejection of the same notebook
 - Approve only what you would put your name to; this is the last gate before the operator reads it.
 - Never approve a feature whose notebooks you have not opened.
 - Never ask the operator anything. There is no human gate on this build — decide.
-- When the list is empty, commit and push any files you changed, say so, and exit.
+- When both lists are empty, commit and push any files you changed, say so, and exit.
+- Judge a feature against the notebooks that exist. A feature owning 37 tasks is judged on
+  the ones that are done; if some are still pending, it is not READY and you leave it alone.

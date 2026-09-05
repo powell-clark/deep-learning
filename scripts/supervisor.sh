@@ -94,6 +94,14 @@ except Exception: print(0)' 2>/dev/null || echo 0)
 fi
 [ -z "${awaiting:-}" ] && awaiting=0
 
+# Features never close on their own. Tasks auto-close (their gate is auto-approve), so
+# the review sweep stays permanently empty and the reviewer seat was never started --
+# which would have left all 20 features stranded in in_progress and declared the corpus
+# ready anyway, because the terminal condition only looked at tasks. Count the open
+# features so both the reviewer trigger and the terminal condition can see them.
+features_open=$(grep -c '^FEAT-' CONSCIOUSNESS/features/FEATURE-ACTIVE-INDEX.md 2>/dev/null || echo 0)
+[ -z "${features_open:-}" ] && features_open=0
+
 # Count LIVE seats. The harness reports a working background session as state
 # 'working', not 'running' — matching 'running' made this return 0 always, so
 # MAX_BUILDERS never bound and the 02:15 tick started a second builder while the
@@ -119,7 +127,7 @@ swapin=$(timeout 15 vmstat 1 2 | tail -1 | awk '{print $7}')
 [ -z "${swapin:-}" ] && swapin=0
 
 # Terminal condition: nothing to build, nothing to judge, nothing in flight.
-if [ "$remaining" -eq 0 ] && [ "$awaiting" -eq 0 ] \
+if [ "$remaining" -eq 0 ] && [ "$awaiting" -eq 0 ] && [ "$features_open" -eq 0 ] \
    && [ "$live_builders" -eq 0 ] && [ "$live_reviewer" -eq 0 ]; then
   note corpus-ready "all tasks done, no verdicts awaiting — remove the cron line by hand"
   touch "$SENTINEL"
@@ -151,8 +159,10 @@ start_seat() {
   fi
 }
 
-# Reviewer first: it unblocks features and is short-lived.
-if [ "$awaiting" -gt 0 ] && [ "$live_reviewer" -eq 0 ]; then
+# Reviewer first: it unblocks features and is short-lived. Two triggers, not one --
+# an explicit in_review row waiting for a verdict, OR the build having run out of tasks
+# with features still open, which is the closeout pass.
+if [ "$live_reviewer" -eq 0 ] && { [ "$awaiting" -gt 0 ] || { [ "$remaining" -eq 0 ] && [ "$features_open" -gt 0 ]; }; }; then
   start_seat "dl-reviewer-$(date +%H%M%S)" \
     "Read REVIEWER.md in this repository and follow it exactly. You are the reviewer; do not write notebooks."
   exit 0
@@ -162,5 +172,5 @@ if [ "$remaining" -gt 0 ] && [ "$live_builders" -lt "$MAX_BUILDERS" ]; then
   start_seat "dl-builder-$(date +%H%M%S)" \
     "Read BUILDER.md in this repository and follow it exactly, looping until no claimable task remains. You are unattended: never ask a question, never wait for input."
 else
-  note idle "remaining=${remaining} awaiting=${awaiting} builders=${live_builders} reviewer=${live_reviewer} — nothing to start"
+  note idle "remaining=${remaining} awaiting=${awaiting} features=${features_open} builders=${live_builders} reviewer=${live_reviewer} — nothing to start"
 fi
