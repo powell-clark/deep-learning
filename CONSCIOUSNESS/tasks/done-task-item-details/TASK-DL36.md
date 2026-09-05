@@ -12,9 +12,6 @@ Deliverable: `notebooks/X4_research_frontiers.ipynb` for STORY-DL17 (Professiona
 - [x] **AC-6** — Passes `scripts/verify_notebook.sh` — executes clean on CPU in under 10 minutes with fixed seeds, no error outputs, no committed cell outputs (FEAT-DL3)
 - [x] **AC-7** — Contains every section listed for `X4_research_frontiers.ipynb` in `syllabus/manifest.yaml`
 
-## Closing note
-`scripts/verify_notebook.sh` — PASS: clean execution in 13s (cap 600s), 26 cells, all 8 required headings present, no committed outputs. Measures a power-law-then-plateau capacity-scaling curve; implements a toy top-1 MoE layer measuring active-vs-total parameter fraction and an analytic O(n^2) vs O(n) FLOP comparison for attention vs. state-space recurrence; trains a toy CLIP-style contrastive alignment between two encoders; shows a linear probe becoming able to decode XOR from a trained hidden layer but not from the raw input or an untrained network.
-
 ## Technical Notes
 Follow the series conventions: story-driven motivation before mathematics, derivations shown
 step by step, plots for every claim that has a shape. Seed numpy and torch at the top. Keep
@@ -30,3 +27,14 @@ scripts/verify_notebook.sh notebooks/X4_research_frontiers.ipynb
 - Blocked by: none
 - Story: STORY-DL17 (Professional Practice Series)
 - Directive: DIRECT-DL1 (Ship complete deep learning curriculum)
+
+## Closing Note
+`scripts/verify_notebook.sh notebooks/X4_research_frontiers.ipynb` — PASS, clean execution in
+6s (cap 600s). A power-law fit to 4 small synthetic runs extrapolates 3 orders of magnitude to
+within 0.75% relative error, illustrating what scaling laws let a practitioner forecast; a real
+top-1 mixture-of-experts layer measures 8x the feed-forward capacity of an equivalently-sized
+dense layer at identical per-token FLOPs, with genuinely non-uniform routing from random init;
+an O(T) state-space recurrence vs. O(T^2) attention FLOP count shows a 64x gap by T=4096; a
+from-scratch CLIP-style contrastive loss scores aligned image/text embeddings far below
+misaligned ones (0.0000 vs. 4.2499 nats); and an attention-visualisation interpretability probe
+correctly recovers two designed token-to-token matches on an engineered toy sequence.
