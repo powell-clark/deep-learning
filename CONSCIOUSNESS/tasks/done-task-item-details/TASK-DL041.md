@@ -17,6 +17,7 @@ Rejected at review (FEAT-DL1, AC-2). notebooks/11b_lm_pretraining_practical.ipyn
 
 ## Dependencies
 
+- Blocked by: none
 - Directive: DIRECT-DL1
 - Story: STORY-DL12
 - Features: FEAT-DL1
