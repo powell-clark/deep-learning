@@ -6,3 +6,4 @@ TASK-DL4|Lesson 1b From Linear Models to Neurons practical|STORY-DL2|DIRECT-DL1|
 TASK-DL5|Lesson 2a Multilayer Perceptrons and Backpropagation theory|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL5.md|1d|3
 TASK-DL6|Lesson 2b Multilayer Perceptrons and Backpropagation practical|STORY-DL3|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL6|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL6.md|1d|3
 TASK-DL7|Lesson 3a Training Dynamics theory|STORY-DL4|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL7|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL7.md|1d|3
+TASK-DL8|Lesson 3b Training Dynamics practical|STORY-DL4|DIRECT-DL1|FEAT-DL1,FEAT-DL2,FEAT-DL3,FEAT-DL7|CONSCIOUSNESS/tasks/done-task-item-details/TASK-DL8.md|1d|3
