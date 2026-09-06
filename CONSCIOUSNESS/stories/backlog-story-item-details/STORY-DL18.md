@@ -18,7 +18,7 @@ than a blanket rewrite.
 - [ ] Each lesson that falls short has its own refinement task filed, citing the specific gap
 
 ## Tasks
-(minted in a follow-up commit via append-task-cli, once DIRECT-DL2 is visible on origin/main)
+- TASK-DL048
 
 ## Links
 - Directive: DIRECT-DL2 (Maintain the curriculum as a living Feynman-style corpus)
