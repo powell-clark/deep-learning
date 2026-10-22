@@ -13,18 +13,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 2 }
+      - name: Detect changed notebooks
+        id: changed
+        run: |
+          set -euo pipefail
+          changed=$(git diff --name-only HEAD~1 HEAD -- 'notebooks/*.ipynb')
+          {
+            echo 'notebooks<<EOF'
+            printf '%s\n' "$changed"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+          if [ -z "$changed" ]; then
+            echo "no notebooks changed"
+          else
+            printf '%s\n' "$changed"
+          fi
       - uses: actions/setup-python@v5
-        with: { python-version: '3.12' }
+        if: steps.changed.outputs.notebooks != ''
+        with:
+          python-version: '3.12'
+          cache: pip
       - name: Install
+        if: steps.changed.outputs.notebooks != ''
         run: |
           python -m venv .venv
           .venv/bin/pip install --quiet --upgrade pip
+          .venv/bin/pip install --quiet 'torch>=2.2.0' 'torchvision>=0.17.0' --index-url https://download.pytorch.org/whl/cpu
           .venv/bin/pip install --quiet -r requirements.txt
       - name: Verify changed notebooks
+        if: steps.changed.outputs.notebooks != ''
+        env:
+          changed: ${{ steps.changed.outputs.notebooks }}
         run: |
           set -uo pipefail
-          changed=$(git diff --name-only HEAD~1 HEAD -- 'notebooks/*.ipynb' || true)
-          if [ -z "$changed" ]; then echo "no notebooks changed"; exit 0; fi
           rc=0
           for nb in $changed; do
             [ -f "$nb" ] || continue
