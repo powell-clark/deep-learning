@@ -114,10 +114,9 @@ scripts/verify_notebook.sh notebooks/0a_intro_deep_learning_theory.ipynb
 
 ## How this repository is built
 
-The curriculum is written by autonomous Claude Code sessions under the
-[consciousness](https://github.com/[redacted-fed]) plugin. `CONSCIOUSNESS/`
-carries the directive, stories, features, tasks and every review verdict — the full
-provenance of what was built, by which seat, against which acceptance criteria.
+The curriculum was developed with Claude Code: lessons were drafted by autonomous sessions against
+a written syllabus, executed top to bottom and reviewed before they were accepted. The agents'
+working state is kept out of this repository.
 
 ## Licence
 

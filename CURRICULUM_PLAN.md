@@ -38,7 +38,6 @@ File names follow the series convention: `notebooks/{n}a_{slug}_theory.ipynb`,
 
 ## Provenance
 
-Built by autonomous Claude Code builder seats under the
-[consciousness](https://github.com/[redacted-fed]) plugin, task by task, each
-verified by `scripts/verify_notebook.sh` before its task closed. `CONSCIOUSNESS/` carries the
-directive, stories, features, tasks and every review verdict for the full build history.
+Built by autonomous Claude Code sessions, task by task, each notebook verified by
+`scripts/verify_notebook.sh` and reviewed before its task closed. The agents' working state
+is kept out of this repository.
